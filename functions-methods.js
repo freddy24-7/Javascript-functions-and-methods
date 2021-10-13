@@ -9,7 +9,17 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
-
+function getEmailDomain(emailadres) {
+    let emailDomain = null;
+    let pos = emailadres.search('@'); // get position of domain
+    if (pos > 0) {
+        emailDomain = emailadres.slice(pos+1); // using slice method to get domain name,
+        // "+1" mean domain does not include "@"
+    }
+    return emailDomain;
+}
+inputEmail = getEmailDomain("t.mellink@novi.nl")
+console.log(inputEmail)
 
 
 /* Opdracht  2 */
