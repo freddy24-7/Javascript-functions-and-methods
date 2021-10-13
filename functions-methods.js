@@ -9,7 +9,17 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
-
+function getEmailDomain(emailadres) {
+    let emailDomain = null;
+    let pos = emailadres.search('@'); // get position of domain
+    if (pos > 0) {
+        emailDomain = emailadres.slice(pos+1); // using slice method to get domain name,
+        // "+1" mean domain does not include "@"
+    }
+    return emailDomain;
+}
+inputEmail = getEmailDomain("t.mellink@novi.nl")
+console.log(inputEmail)
 
 
 /* Opdracht  2 */
@@ -20,7 +30,22 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
-
+function typeOfEmail(emailadres) {
+    let string = emailadres
+    if (string.includes("education")) {
+        return "Student";
+    } else if (string.includes("novi.nl")) {
+        return "Medewerker";
+    } else {
+        return "Extern"
+    }
+}
+typeofPerson1 = typeOfEmail("John@gmail.com")
+console.log(typeofPerson1)
+typeofPerson2 = typeOfEmail("n.eeken@novi-education.nl")
+console.log(typeofPerson2)
+typeofPerson3 = typeOfEmail("t.mellink@novi.nl")
+console.log(typeofPerson3)
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -34,3 +59,23 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailadres) {
+    let string = emailadres
+    const firstCondition = string.includes("@");
+    const secondCondition = string.endsWith(".");
+    const thirdCondition = string.includes(",");
+
+    if (firstCondition && !secondCondition && !thirdCondition) {
+        return "Valid email - (true)"
+    } else {
+        return "Not a valid email - (false)"
+    }
+}
+
+checkEmail1 = checkEmailValidity("t.mellink@no,vi.nl")
+console.log(checkEmail1)
+checkEmail2 = checkEmailValidity("t.mellink@novi.nl")
+console.log(checkEmail2)
+checkEmail3 = checkEmailValidity("t.mellink@novi.nl.")
+console.log(checkEmail3)
