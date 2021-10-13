@@ -30,7 +30,22 @@ console.log(inputEmail)
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
-
+function typeOfEmail(emailadres) {
+    let string = emailadres
+    if (string.includes("education")) {
+        return "Student";
+    } else if (string.includes("novi.nl")) {
+        return "Medewerker";
+    } else {
+        return "Extern"
+    }
+}
+typeofPerson1 = typeOfEmail("John@gmail.com")
+console.log(typeofPerson1)
+typeofPerson2 = typeOfEmail("n.eeken@novi-education.nl")
+console.log(typeofPerson2)
+typeofPerson3 = typeOfEmail("t.mellink@novi.nl")
+console.log(typeofPerson3)
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
