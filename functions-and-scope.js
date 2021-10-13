@@ -14,6 +14,22 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+// Alternative 1
+const cumLaudeCutoff = 8;
+let counter = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= cumLaudeCutoff) {
+        counter++}
+} console.log(counter)
+
+//Alternative 2
+// let counter = 0;
+// const cumLaudeCutoff = 8;
+// for (const grade of grades) {
+//     if (grade >= cumLaudeCutoff) {
+//         counter++}
+// } console.log(counter)
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,7 +43,44 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+//Alternative 1
+// function cumLaude() {
+//     let counter = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//         if (grades[i] >= cumLaudeCutoff) {
+//             counter++}
+//         } return counter
+// }
+// gradesInput = cumLaude()
+// console.log(gradesInput)
 
+//Alternative 2
+// function cumLaude() {
+//         const cumLaude = 8;
+//         let counter = 0;
+//         for (const grade of grades) {
+//             if (grade >= cumLaude) {
+//                 counter++}
+//         } return counter
+// }
+// gradesInput = cumLaude(grades)
+// console.log(gradesInput)
+
+//Alternative 3
+aArray = cumLaude(9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6);
+bArray = cumLaude(6, 4, 5);
+cArray = cumLaude(8, 9, 4, 6, 10);
+
+function cumLaude() {
+    let counter = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] >= cumLaudeCutoff) {
+            counter++}
+    } return counter
+}
+console.log(aArray)
+console.log(bArray)
+console.log(cArray)
 
 
 /* Opdracht  2: Gemiddeld cijfer */
