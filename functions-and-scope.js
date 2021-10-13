@@ -93,6 +93,14 @@ console.log(cArray)
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
 // Log het antwoord in de terminal.
 
+let sum = 0;
+for (let i = 0; i < grades.length; i++) {
+    sum += grades[i]
+}
+let average = (sum/grades.length);
+console.log(average)
+
+
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
@@ -100,6 +108,23 @@ console.log(cArray)
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+firstArray = averageGrade(9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6)
+secondArray = averageGrade(6, 4, 5)
+thirdArray = averageGrade(8, 9, 4, 6, 10)
+
+function averageGrade() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+    }
+    let average = (sum/arguments.length);
+    let roundedAverage = Math.round(average*100)/100
+    return roundedAverage
+}
+console.log(firstArray)
+console.log(secondArray)
+console.log(thirdArray)
 
 // ---- Verwachte uitkomsten:
 // averageGrade(grades) geeft 6.642857142857143
@@ -110,6 +135,8 @@ console.log(cArray)
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
+
+//Implemented above in 2b
 
 
 
