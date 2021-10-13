@@ -150,6 +150,16 @@ console.log(thirdArray)
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
 
+//Bestaande methode:
+//console.log(Math.max(...grades));
+
+//With for loop
+    let highestGradeScore = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] > highestGradeScore) {
+        highestGradeScore = grades[i]}
+} console.log(highestGradeScore)
+
 // ---- Verwachte uitkomst: 9
 
 
@@ -157,6 +167,21 @@ console.log(thirdArray)
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+anotherFirstArray = highestGrade(9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6)
+anotherSecondArray = highestGrade(6, 4, 5)
+anotherThirdArray = highestGrade(8, 9, 4, 6, 10)
+
+function highestGrade() {
+    let highestGrade = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > highestGrade) {
+            highestGrade = arguments[i]}
+    } return highestGrade
+}
+console.log(anotherFirstArray)
+console.log(anotherSecondArray)
+console.log(anotherThirdArray)
 
 // ---- Verwachte uitkomsten:
 // highestGrade(grades) geeft 9
