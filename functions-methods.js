@@ -59,3 +59,23 @@ console.log(typeofPerson3)
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailadres) {
+    let string = emailadres
+    const firstCondition = string.includes("@");
+    const secondCondition = string.endsWith(".");
+    const thirdCondition = string.includes(",");
+
+    if (firstCondition && !secondCondition && !thirdCondition) {
+        return "Valid email - (true)"
+    } else {
+        return "Not a valid email - (false)"
+    }
+}
+
+checkEmail1 = checkEmailValidity("t.mellink@no,vi.nl")
+console.log(checkEmail1)
+checkEmail2 = checkEmailValidity("t.mellink@novi.nl")
+console.log(checkEmail2)
+checkEmail3 = checkEmailValidity("t.mellink@novi.nl.")
+console.log(checkEmail3)
